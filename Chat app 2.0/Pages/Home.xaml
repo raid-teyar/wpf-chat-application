@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="Chat_app_2._0.Pages.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:Chat_app_2._0.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Home"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="White"
+    ShowsNavigationUI="False"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded">
+    <Grid>
+        <hc:TransitioningContentControl TransitionMode="Right2LeftWithFade">
+            <DataGrid
+            x:Name="msgUsers"
+            AutoGenerateColumns="False"
+            HeadersVisibility="None"
+            IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="80">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Ellipse Width="50" Height="50">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding profilePicture}" />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn  Binding="{Binding Username}" Header="name" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </hc:TransitioningContentControl>
+    </Grid>
+
+</Page>
