@@ -13,11 +13,8 @@ namespace Chat_app_2._0
     {
         public MainWindow()
         {
-            LoginForm login = new LoginForm();
-            login.ShowDialog();
             InitializeComponent();
-            mainFrame.Navigate(new Uri("Pages/Home.xaml", UriKind.Relative));
-            
+            mainFrame.Navigate(new Home());
         }
 
         private void SideMenu_SelectionChanged(object sender, HandyControl.Data.FunctionEventArgs<object> e)

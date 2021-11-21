@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Chat_app_2._0.Pages"
       xmlns:hc="https://handyorg.github.io/handycontrol"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Account"
@@ -13,8 +14,39 @@
 
 
     <hc:TransitioningContentControl TransitionMode="Right2LeftWithFade">
-        <Grid Background="#FFF3F3F3">
+        <DockPanel Width="400" Background="#FFF3F3F3">
+            <Grid  DockPanel.Dock="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ToggleButton Name="ToggleButtonAudio" hc:BorderElement.CornerRadius="15" Width="30" Height="30" Padding="7" Margin="6" hc:IconSwitchElement.Geometry="{StaticResource AudioGeometry}" Style="{StaticResource ToggleButtonIcon}"/>
+                <Button Grid.Column="2" Margin="6,0,6,0" hc:BorderElement.CornerRadius="15" Width="30" Height="30" Padding="7">
+                    <iconPacks:Material Kind="Send"/>
+                </Button>
+                <TextBox VerticalAlignment="Center" Grid.Column="1"  >
+                </TextBox>
+                <TextBox Grid.Column="1"  Margin="5"  HorizontalAlignment="Stretch">
+                </TextBox>
+            </Grid>
+            <ListBox  Style="{StaticResource StackPanelVerticalListBox}">
+                <ListBox.Background>
+                    <ImageBrush ImageSource="/Pages/E6LBHd5WUAQPuWx.png" Stretch="UniformToFill"/>
+                </ListBox.Background>
+                <hc:ChatBubble Role="Receiver" Content="yo wassup"/>
+                <hc:ChatBubble Role="Sender" Content="sup"/>
+                <hc:ChatBubble Role="Receiver" Content="its working"/>
+                <hc:ChatBubble Role="Sender" Content="yes i guess"/>
+                <hc:ChatBubble Role="Receiver" Content="ok stop talking to yourself now"/>
+                <hc:ChatBubble Role="Sender" Content="yea my bad"/>
+                <hc:ChatBubble Role="Receiver" Type="Custom">
+                    <iconPacks:Material Height="40" Width="40" Kind="ThumbUp" />
+                </hc:ChatBubble>
 
-        </Grid>
+            </ListBox>
+            
+
+        </DockPanel>
     </hc:TransitioningContentControl>
 </Page>

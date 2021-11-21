@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              
              xmlns:local="clr-namespace:Chat_app_2._0"
-             StartupUri="MainWindow.xaml">
+             StartupUri="LoginForm.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

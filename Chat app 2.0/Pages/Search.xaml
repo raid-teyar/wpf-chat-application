@@ -19,28 +19,11 @@
                 DockPanel.Dock="Top"
                 Margin="10"
                 BorderThickness="2"
-                ShowClearButton="True" />
-        
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <hc:OutlineText
-                Grid.Column="1"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                FontSize="40"
-                Opacity="0.5"
-                Text="No Results" />
-                <hc:GifImage
-                Width="171"
-                Height="175"
-                HorizontalAlignment="Right"
-                Opacity="0.5"
-                Source="../src/crying-cute-anime.gif"
-                Uri="../src/crying-cute-anime.gif"/>
-            </Grid>
-    </DockPanel>
+                ShowClearButton="True"
+                SearchStarted="SearchBar_SearchStarted"/>
+            <ContentControl x:Name="mainContent"/>
+
+
+        </DockPanel>
     </hc:TransitioningContentControl>
 </Page>

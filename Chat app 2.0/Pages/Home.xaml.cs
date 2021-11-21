@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Chat_app_2;
+using Chat_app_2._0.Helpers;
 using HandyControl.Controls;
 
 namespace Chat_app_2._0.Pages
@@ -39,9 +40,10 @@ namespace Chat_app_2._0.Pages
             
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Growl.Info("Login Succeded!");
+            DataAccessHelper helper = new DataAccessHelper();
+            helper.connectDatabase("LocalConnectionString");
         }
     }
 }

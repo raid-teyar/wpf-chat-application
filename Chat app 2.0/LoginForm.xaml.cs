@@ -47,7 +47,9 @@ namespace Chat_app_2._0
             Progress++;
             if (Progress == 100)
             {
+                MainWindow mainWindow = new MainWindow();
                 this.Close();
+                mainWindow.Show();
             }
         }
 

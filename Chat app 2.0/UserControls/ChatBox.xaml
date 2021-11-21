@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Chat_app_2._0.UserControls.ChatBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" 
+             Height="486"
+             Effect="{StaticResource EffectShadow5}"
+             Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="ListBoxChat" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" Background="Transparent" BorderThickness="0" Style="{StaticResource StackPanelVerticalListBox}" ItemsSource="{Binding ChatInfos}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <hc:ChatBubble MaxWidth="300" Role="{Binding Role}" Type="{Binding Type}" Content="{Binding Message}" Tag="{Binding}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border Background="{DynamicResource DarkDefaultBrush}" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ToggleButton Name="ToggleButtonAudio" hc:BorderElement.CornerRadius="15" Width="30" Height="30" Padding="7" Margin="6" hc:IconSwitchElement.Geometry="{StaticResource AudioGeometry}" Style="{StaticResource ToggleButtonIcon}"/>
+                <Button Grid.Column="2" Margin="6,0,6,0" hc:BorderElement.CornerRadius="15" Width="30" Height="30" Padding="7">
+                    <iconPacks:Material Kind="Send"/>
+                </Button>
+                <TextBox VerticalAlignment="Center" Grid.Column="1"  >
+                </TextBox>
+                <Button Grid.Column="1" HorizontalAlignment="Stretch">
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

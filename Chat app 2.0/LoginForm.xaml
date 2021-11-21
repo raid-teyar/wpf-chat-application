@@ -10,17 +10,27 @@
     Title="LoginForm"
     Width="600"
     Height="400"
-    FontFamily="Oxygen"
-    FontSize="25"
+    FontFamily="Candara"
+    FontSize="20"
     Topmost="True"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    >
     <hc:TransitioningContentControl TransitionMode="Right2LeftWithFade">
         <Grid>
-            <Grid x:Name="mainGrid" Background="#FFE6E6E6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="94*"/>
+                <ColumnDefinition Width="261*"/>
+                <ColumnDefinition Width="59*"/>
+                <ColumnDefinition Width="42*"/>
+                <ColumnDefinition Width="144*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="mainGrid" Background="#FFE6E6E6" Grid.ColumnSpan="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.5*"/>
                     <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width=".5*"/>
+
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*" />
@@ -29,7 +39,7 @@
                     <RowDefinition Height="1.2*" />
                 </Grid.RowDefinitions>
                 <iconPacks:PackIconMaterial
-                Grid.ColumnSpan="2"
+                Grid.ColumnSpan="3"
                 Width="100"
                 Height="100"
                 HorizontalAlignment="Center"
@@ -40,26 +50,32 @@
                 Grid.Row="1"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Text="Email :" />
+                Text="Email " />
                 <TextBlock
                 Grid.Row="2"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Text="Password :" />
+                Text="Password " />
                 <PasswordBox
+                    Height="40"
+                hc:InfoElement.Necessary="True"
+                
                 Grid.Row="2"
                 Grid.Column="1"
-                Margin="10"
-                Style="{StaticResource PasswordBoxExtend}" />
-                <TextBox
+                Margin="10"/>
+                <hc:TextBox
+                Height="40"
+                TextType="Mail"
+                hc:InfoElement.Necessary="True"
+                hc:InfoElement.Placeholder="enter your email"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="10"
-                Style="{StaticResource TextBoxExtend}" />
+                 />
                 <Button
                 Grid.Row="3"
                 Grid.Column="0"
-                Grid.ColumnSpan="2"
+                Grid.ColumnSpan="3"
                 Height="40"
                 Padding="40,5"
                 Content="Login"
@@ -73,13 +89,10 @@
                 x:Name="LoadingScreen"
                 Opacity="0"
                 Background="#D8898989"
-                Grid.RowSpan="4"
-                Grid.ColumnSpan="2"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch">
-                <hc:WaveProgressBar Value="{Binding Progress}"  VerticalAlignment="Center" />
+                Grid.ColumnSpan="5">
+                <hc:WaveProgressBar Value="{Binding Progress}"   VerticalAlignment="Center" FontFamily="Arial" />
             </Grid>
         </Grid>
-       
+
     </hc:TransitioningContentControl>
 </Window>
