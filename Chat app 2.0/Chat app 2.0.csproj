@@ -41,8 +41,8 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="HandyControl, Version=3.2.0.0, Culture=neutral, PublicKeyToken=45be8712787a1e5b, processorArchitecture=MSIL">
-      <HintPath>..\packages\HandyControl.3.2.0\lib\net472\HandyControl.dll</HintPath>
+    <Reference Include="HandyControl, Version=3.3.0.0, Culture=neutral, PublicKeyToken=45be8712787a1e5b, processorArchitecture=MSIL">
+      <HintPath>..\packages\HandyControl.3.3.0\lib\net472\HandyControl.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.Material.4.11.0\lib\net47\MahApps.Metro.IconPacks.Core.dll</HintPath>
@@ -194,18 +194,6 @@
     <Resource Include="src\E0SigB2VUAA8RH0.jpg" />
     <Resource Include="src\E0sUY2IVoAMnzU0.jpg" />
     <Resource Include="src\E2tADaFVEAYJhLX.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pages\E41UcAsXEAAtVkO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pages\FAu3lTmXsAEDnrX.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pages\EqGeiMAW4AA55r_.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pages\E6LBHd5WUAQPuWx.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="app.ico" />

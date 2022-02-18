@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Chat_app_2._0.Helpers;
+using HandyControl.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +20,10 @@ namespace Chat_app_2._0
     /// <summary>
     /// Interaction logic for LoginForm.xaml
     /// </summary>
-    public partial class LoginForm : Window
+    public partial class LoginForm : System.Windows.Window
     {
+        DataAccessHelper helper = new DataAccessHelper();
         DispatcherTimer timer = new DispatcherTimer();
-
-        
         public int Progress
         {
             get { return (int)GetValue(ProgressProperty); }
@@ -40,6 +41,7 @@ namespace Chat_app_2._0
             DataContext = this;
             timer.Interval = TimeSpan.FromMilliseconds(10);
             timer.Tick += Timer_Tick;
+            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -53,12 +55,20 @@ namespace Chat_app_2._0
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            LoadingScreen.Opacity = 1;
-            Panel.SetZIndex(mainGrid, -1);
-            Panel.SetZIndex(LoadingScreen, 1);
-            timer.Start();
+            if (await helper.getUser(email.Text, password.Password) == null)
+            {
+                Growl.Error("user not found!");
+            }
+            else
+            {
+                LoadingScreen.Opacity = 1;
+                Panel.SetZIndex(mainGrid, -1);
+                Panel.SetZIndex(LoadingScreen, 1);
+                timer.Start();
+            }
+            
         }
     }
 }

@@ -32,7 +32,7 @@
             </Grid>
             <ListBox  Style="{StaticResource StackPanelVerticalListBox}">
                 <ListBox.Background>
-                    <ImageBrush ImageSource="/Pages/E6LBHd5WUAQPuWx.png" Stretch="UniformToFill"/>
+                    <ImageBrush ImageSource="/src/E0IYR8qVoAkWJLN.jpg" Stretch="UniformToFill"/>
                 </ListBox.Background>
                 <hc:ChatBubble Role="Receiver" Content="yo wassup"/>
                 <hc:ChatBubble Role="Sender" Content="sup"/>
