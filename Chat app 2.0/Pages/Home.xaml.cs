@@ -32,10 +32,10 @@ namespace Chat_app_2._0.Pages
         {
             InitializeComponent();
             List<User> users = new List<User>();
-            users.Add(new User() { Username = "rd07", gender = Gender.Male, profilePicture = img1 });
-            users.Add(new User() { Username = "mayar07", gender = Gender.Female, profilePicture = img2 });
-            users.Add(new User() { Username = "bh07", gender = Gender.Male, profilePicture = img3 });
-            users.Add(new User() { Username = "khalil07", gender = Gender.none, profilePicture = img4 });
+            users.Add(new User() { username = "rd07", gender = Gender.Male, profile = img1 });
+            users.Add(new User() { username = "mayar07", gender = Gender.Female, profile = img2 });
+            users.Add(new User() { username = "bh07", gender = Gender.Male, profile = img3 });
+            users.Add(new User() { username = "khalil07", gender = Gender.none, profile = img4 });
             msgUsers.ItemsSource = users;
             
         }

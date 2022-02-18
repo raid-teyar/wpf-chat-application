@@ -16,38 +16,45 @@
         <DockPanel>
             <Grid DockPanel.Dock="Left">
                 <hc:TransitioningContentControl TransitionMode="Right2LeftWithFade">
-                    <hc:SideMenu  x:Name="sideMenu" SelectionChanged="SideMenu_SelectionChanged"  BorderThickness="1" Width="170">
-                        <hc:SideMenuItem  Header="Search">
-                            <hc:SideMenuItem.Icon>
-                                <iconPacks:Material Kind="Magnify"/>
-                            </hc:SideMenuItem.Icon>
-                        </hc:SideMenuItem>
-                        <hc:SideMenuItem  Header="Home" IsSelected="True">
-                            <hc:SideMenuItem.Icon>
-                                <iconPacks:Material Kind="Home"/>
-                            </hc:SideMenuItem.Icon>
-                        </hc:SideMenuItem>
-                        <hc:SideMenuItem  Header="Notifications">
-                            <hc:SideMenuItem.Icon>
-                                <iconPacks:Material Kind="Bell"/>
-                            </hc:SideMenuItem.Icon>
-                        </hc:SideMenuItem>
-                        <hc:SideMenuItem  Header="Account">
-                            <hc:SideMenuItem.Icon>
-                                <iconPacks:Material Kind="Account"/>
-                            </hc:SideMenuItem.Icon>
-                        </hc:SideMenuItem>
-                        <hc:SideMenuItem  Header="Settings">
-                            <hc:SideMenuItem.Icon>
-                                <iconPacks:Material Kind="Cog"/>
-                            </hc:SideMenuItem.Icon>
-                        </hc:SideMenuItem>
-                        <hc:SideMenuItem  Header="About">
-                            <hc:SideMenuItem.Icon>
-                                <iconPacks:Material Kind="InformationVariant"/>
-                            </hc:SideMenuItem.Icon>
-                        </hc:SideMenuItem>
-                    </hc:SideMenu>
+                    <Grid>
+                        <hc:SideMenu VerticalAlignment="Top"   x:Name="sideMenuTop" SelectionChanged="SideMenu_SelectionChanged"  BorderThickness="1" Width="170">
+                            <hc:SideMenuItem  Header="Search">
+                                <hc:SideMenuItem.Icon>
+                                    <iconPacks:Material Kind="Magnify"/>
+                                </hc:SideMenuItem.Icon>
+                            </hc:SideMenuItem>
+                            <hc:SideMenuItem  Header="Home" IsSelected="True">
+                                <hc:SideMenuItem.Icon>
+                                    <iconPacks:Material Kind="Home"/>
+                                </hc:SideMenuItem.Icon>
+                            </hc:SideMenuItem>
+                            <hc:SideMenuItem  Header="Messages">
+                                <hc:SideMenuItem.Icon>
+                                    <iconPacks:Material Kind="Message"/>
+                                </hc:SideMenuItem.Icon>
+                            </hc:SideMenuItem>
+                            <hc:SideMenuItem  Header="Account">
+                                <hc:SideMenuItem.Icon>
+                                    <iconPacks:Material Kind="Account"/>
+                                </hc:SideMenuItem.Icon>
+                            </hc:SideMenuItem>
+                         
+                        </hc:SideMenu>
+                        <hc:SideMenu VerticalAlignment="Bottom"   x:Name="sideMenuBottom" SelectionChanged="SideMenu_SelectionChanged2"  BorderThickness="1" Width="170">
+                            <hc:SideMenuItem  Header="Settings">
+                                <hc:SideMenuItem.Icon>
+                                    <iconPacks:Material Kind="Cog"/>
+                                </hc:SideMenuItem.Icon>
+                            </hc:SideMenuItem>
+                            <hc:SideMenuItem VerticalAlignment="Bottom"  Header="About">
+                                <hc:SideMenuItem.Icon>
+                                    <iconPacks:Material Kind="InformationVariant"/>
+                                </hc:SideMenuItem.Icon>
+                            </hc:SideMenuItem>
+                        </hc:SideMenu>
+
+                    </Grid>
+                    
                 </hc:TransitioningContentControl>
             </Grid>
 

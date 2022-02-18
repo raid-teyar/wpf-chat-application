@@ -22,7 +22,7 @@ namespace Chat_app_2._0.Helpers
         {
             string connectionString = getConnectionString(name);
 
-            using (IDbConnection cnn = new MySqlConnection(connectionString))
+            using (var cnn = new MySqlConnection(connectionString))
             {
                 try
                 {
@@ -35,6 +35,31 @@ namespace Chat_app_2._0.Helpers
                 }
             }
             
+        }
+
+        public async Task<User> getUser(string email, string password)
+        {
+            using (IDbConnection cnn = new MySqlConnection(getConnectionString("LocalConnectionString")))
+            {
+                try
+                {
+                    var users = await cnn.QueryAsync<User>($"Select * From user Where email = '{email}' And password = '{password}'");
+                    if (users.Count() > 0)
+                    {
+                        var user = users.First();
+                        return user;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Growl.Error(e.Message);
+                    return null;
+                }
+            }
         }
     }
 }

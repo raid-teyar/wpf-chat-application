@@ -15,14 +15,15 @@
     <Grid>
         <hc:TransitioningContentControl TransitionMode="Right2LeftWithFade">
             <DataGrid
-            x:Name="msgUsers"
-            AutoGenerateColumns="False"
-            HeadersVisibility="None"
-            IsReadOnly="True">
+                RowHeight="65"
+                x:Name="msgUsers"
+                AutoGenerateColumns="False"
+                HeadersVisibility="None"
+                IsReadOnly="True">
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn Width="80">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
+                    <DataGridTemplateColumn >
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate >
                                 <Ellipse Width="50" Height="50">
                                     <Ellipse.Fill>
                                         <ImageBrush ImageSource="{Binding profilePicture}" />
@@ -31,19 +32,18 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn  Binding="{Binding Username}" Header="name" />
+                    <DataGridTextColumn Binding="{Binding Username}" Header="name" />
                 </DataGrid.Columns>
             </DataGrid>
-            
+
         </hc:TransitioningContentControl>
         <Button
-            Style="{StaticResource ButtonSuccess }"
-            Content="Connect"
-            VerticalAlignment="Bottom"
-            Padding="30 0"
             Margin="20"
+            Padding="30,0"
+            VerticalAlignment="Bottom"
             Click="Button_Click"
-            />
+            Content="Connect"
+            Style="{StaticResource ButtonSuccess}" />
     </Grid>
 
 </Page>

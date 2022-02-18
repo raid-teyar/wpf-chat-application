@@ -14,22 +14,24 @@
     FontSize="20"
     Topmost="True"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d"
-    >
+    mc:Ignorable="d">
     <hc:TransitioningContentControl TransitionMode="Right2LeftWithFade">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="94*"/>
-                <ColumnDefinition Width="261*"/>
-                <ColumnDefinition Width="59*"/>
-                <ColumnDefinition Width="42*"/>
-                <ColumnDefinition Width="144*"/>
+                <ColumnDefinition Width="94*" />
+                <ColumnDefinition Width="261*" />
+                <ColumnDefinition Width="59*" />
+                <ColumnDefinition Width="42*" />
+                <ColumnDefinition Width="144*" />
             </Grid.ColumnDefinitions>
-            <Grid x:Name="mainGrid" Background="#FFE6E6E6" Grid.ColumnSpan="5">
+            <Grid
+                x:Name="mainGrid"
+                Grid.ColumnSpan="5"
+                Background="#FFE6E6E6">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1.5*"/>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width=".5*" />
 
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -39,58 +41,62 @@
                     <RowDefinition Height="1.2*" />
                 </Grid.RowDefinitions>
                 <iconPacks:PackIconMaterial
-                Grid.ColumnSpan="3"
-                Width="100"
-                Height="100"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Foreground="#FF779EF9"
-                Kind="AccountCircleOutline" />
+                    Grid.ColumnSpan="3"
+                    Width="100"
+                    Height="100"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="#FF779EF9"
+                    Kind="AccountCircleOutline" />
                 <TextBlock
-                Grid.Row="1"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Text="Email " />
-                <TextBlock
-                Grid.Row="2"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Text="Password " />
-                <PasswordBox
-                    Height="40"
-                hc:InfoElement.Necessary="True"
-                
-                Grid.Row="2"
-                Grid.Column="1"
-                Margin="10"/>
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Text="Email " />
                 <hc:TextBox
-                Height="40"
-                TextType="Mail"
-                hc:InfoElement.Necessary="True"
-                hc:InfoElement.Placeholder="enter your email"
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="10"
-                 />
+                    x:Name="email"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Height="40"
+                    Margin="10"
+                    hc:InfoElement.Necessary="True"
+                    hc:InfoElement.Placeholder="enter your email"
+                    TextType="Mail"/>
+                <TextBlock
+                    Grid.Row="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Text="Password " />
+                <hc:PasswordBox
+                    ShowEyeButton="True"
+                    x:Name="password"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Height="40"
+                    Margin="10"
+                    hc:InfoElement.Necessary="True" />
                 <Button
-                Grid.Row="3"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Height="40"
-                Padding="40,5"
-                Content="Login"
-                FontFamily="Oxygen"
-                FontSize="20"
-                Style="{StaticResource ButtonPrimary}"
-                Click="Button_Click"/>
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Height="40"
+                    Padding="40,5"
+                    Click="Button_Click"
+                    Content="Login"
+                    FontFamily="Oxygen"
+                    FontSize="20"
+                    Style="{StaticResource ButtonPrimary}" />
             </Grid>
             <Grid
-                Panel.ZIndex="-1"
                 x:Name="LoadingScreen"
-                Opacity="0"
+                Grid.ColumnSpan="5"
+                Panel.ZIndex="-1"
                 Background="#D8898989"
-                Grid.ColumnSpan="5">
-                <hc:WaveProgressBar Value="{Binding Progress}"   VerticalAlignment="Center" FontFamily="Arial" />
+                Opacity="0">
+                <hc:WaveProgressBar
+                    VerticalAlignment="Center"
+                    FontFamily="Arial"
+                    Value="{Binding Progress}" />
             </Grid>
         </Grid>
 
